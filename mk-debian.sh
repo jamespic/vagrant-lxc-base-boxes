@@ -39,6 +39,10 @@ info "Building box to '${PACKAGE}'..."
 ./common/download.sh ${DISTRIBUTION} ${RELEASE} ${ARCH} ${CONTAINER}
 ./debian/vagrant-lxc-fixes.sh ${DISTRIBUTION} ${RELEASE} ${ARCH} ${CONTAINER}
 ./debian/install-extras.sh ${CONTAINER}
+if [ -f ${CUSTOM_SCRIPT} ]; then
+  info "Running ${CUSTOM_SCRIPT}"
+  "${CUSTOM_SCRIPT}"
+fi
 ./common/prepare-vagrant-user.sh ${DISTRIBUTION} ${CONTAINER}
 ./debian/clean.sh ${CONTAINER}
 ./common/package.sh ${CONTAINER} ${PACKAGE}
