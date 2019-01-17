@@ -1,4 +1,4 @@
-UBUNTU_BOXES= trusty xenial
+UBUNTU_BOXES= trusty xenial bionic
 DEBIAN_BOXES= jessie stretch sid
 CENTOS_BOXES= 7
 FEDORA_BOXES= 27 
